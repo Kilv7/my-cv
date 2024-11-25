@@ -139,6 +139,7 @@ body {
   
   .my-projects-list {
     padding-left: 16px;
+    list-style-type: none;
   }
   
   .my-project-item-link {
