@@ -13,9 +13,16 @@ body {
     background-color: #F4F1E1;
     display: flex;
     flex-direction: row-reverse;
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
   }
+
+  @media (max-width: 576px) {
+    .wrapper {
+        flex-direction: column;  /* Змінюємо напрямок на вертикальний для малих екранів */
+    }
+  }
+
   
   .main-content {
     padding-left: 88px;
@@ -24,13 +31,27 @@ body {
     padding-bottom: 80px;
     box-sizing: border-box;
   }
-  
+
+  @media (max-width: 1024px) {
+    .main-content {
+        padding: 64px 72px; /* Зменшуємо відступи для середніх екранів */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .main-content {
+        padding: 32px 20px; /* Зменшуємо відступи для малих екранів */
+    }
+  }
+
   .sidebar {
     background: #F1E6D6;
     padding-top: 40px;
     padding-bottom: 40px;
     box-sizing: border-box;
-    width: 370px;
+    flex: 1;  /* Sidebar буде адаптуватися до вільного простору */
+    min-width: 270px;  /* Мінімальна ширина sidebar */
+    max-width: 370px;  /* Максимальна ширина для великих екранів */
   }
   
   .sidebar-content {
@@ -39,6 +60,25 @@ body {
     padding-right: 40px;
     box-sizing: border-box;
   }
+
+  @media (max-width: 1024px) {
+    .sidebar {
+        width: 100%; /* Зменшуємо ширину для середніх екранів */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .sidebar {
+        width: 100%; /* Повна ширина для малих екранів */
+        padding: 20px; /* Зменшити відступи */
+    }
+  }
+
+  .sidebar img {
+    max-width: 100%;  /* Зображення не перевищує ширину контейнера */
+    height: auto;     /* Пропорції зображення зберігаються */
+  }
+
   
   .contacts-title {
     color: #161D2A;
@@ -48,6 +88,12 @@ body {
     margin-top: 0;
     margin-bottom: 8px;
   }
+
+  @media (max-width: 576px) {
+    .contacts-title {
+        font-size: 18px; /* Зменшуємо розмір шрифта для мобільних */
+    }
+}
   
   .contacts-type {
     color: #161D2A;
@@ -87,6 +133,12 @@ body {
     margin-top: 0;
     margin-bottom: 8px;
   }
+
+  @media (max-width: 576px) {
+    .skills-title {
+        font-size: 18px; /* Зменшуємо шрифт */
+    }
+  }
   
   .skills-list {
     padding-left: 16px;
@@ -108,6 +160,12 @@ body {
     line-height: 55px; 
     margin-top: 0;
     margin-bottom: 12px;
+  }
+
+  @media (max-width: 576px) {
+    .my-name {
+        font-size: 26px; /* Зменшення шрифту для мобільних */
+    }
   }
   
   .my-descr {
@@ -140,6 +198,16 @@ body {
   .my-projects-list {
     padding-left: 16px;
     list-style-type: none;
+  }
+
+  @media (max-width: 576px) {
+    .my-projects-list {
+        padding-left: 10px; /* Зменшуємо відступи */
+    }
+
+    .my-project-item {
+        font-size: 12px; /* Зменшуємо розмір шрифту */
+    }
   }
   
   .my-project-item-link {
